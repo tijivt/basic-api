@@ -53,7 +53,7 @@ class UserController extends Controller
         if($userexists>0) {
 
 
-        $UpdateDetails = User::where('email', $email)->Update(['api_token'=>$api_token]);
+        $UpdateDetails = User::where('email', $email)->Update(['api_token'=>$api_token]);//api token updation
 
         if($UpdateDetails) {
             return response()->json(['status'=>'200','api_token'=>$api_token,'message'=>'User logged successfully']);

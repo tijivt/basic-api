@@ -39,18 +39,7 @@ class ArticleController extends Controller
 
     public function update($id, Request $request)
     {
-        /*$api_token=$request['api_token'];
 
-
-        $article_author=Article::select('author')->where(['id'=> $id])->get();
-
-        if($article_author=="" || $article_author==0) {
-            return response()->json(['status'=>'401','message'=>'No such Article']);
-        }
-        $api_tokn_get=User::select('api_token')->where(['id'=>$article_author])->get();
-        if($api_tokn_get!=$api_token) {
-            return response()->json(['status'=>'401','message'=>'User unauthorized']);
-        }*/
         $user = $request->user();
         $articlexists=Article::where(['id'=>$id])->count();
         if($articlexists==0) {

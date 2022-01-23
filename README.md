@@ -1,25 +1,38 @@
-# Lumen PHP Framework
+Rest Api design and implementation using lumen
+---------------------------------------------------
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+Steps to execute the api are:-
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+1.Download the git directory
+2.Need php 7.3 above.
+3.Copy the project to a directory
+4.Go to the directory and install composer
+5.Create database and configure it in.env  file.
+6.Start the devlopement server using php artisan serve
+7.Migrate the tables using the command- php artisan migrate
+8.Execute th api end points with help of any one of http client(postman,insomnia etc).
+The different api end points are:-
 
-## Official Documentation
+Login
+url-api/login,method-post,request parameters-email,password
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+Register
+url-api/register,method-post,request parameters-name,email,password
 
-## Contributing
+Get All Articles
+url-api/articles,method-get
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Get One Artcle based on Id
+url-api/articles/{id},method-get(id is article id)
 
-## Security Vulnerabilities
+Authorized api end points
+-------------------------
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Create a  New Article
+url-api/articles,method-post,request parameters-name,email,password,api_token
 
-## License
+Update an Article
+url-api/articles/{id},method-put,request parameters-api_token(id is article id)
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# basic-rest-api-larravel-lumen
+Delete an Article
+url-api/articles/{id},method-delete,method-put,request parameters-api_token(id is article id)
